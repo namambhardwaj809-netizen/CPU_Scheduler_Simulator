@@ -2,20 +2,26 @@
 
 An interactive CPU Scheduling Simulator built using Python and Streamlit to visualize and compare different CPU scheduling algorithms.
 
-## Features
+## 🚀 Live Demo
+
+**[Launch CPU Scheduler Simulator](https://namam-scheduling-visualizer.streamlit.app/)**
+
+## ✨ Features
+
 - Interactive process input
 - CPU scheduling algorithm comparison
 - Gantt chart visualization
 - Waiting Time and Turnaround Time calculation
 - Performance analysis
 
-## Algorithms Implemented
+## 🧮 Algorithms Implemented
+
 1. First Come First Serve (FCFS)
 2. Shortest Job First (SJF – Non-Preemptive)
 3. Priority Scheduling (Non-Preemptive)
 4. Round Robin (RR)
 
-## Screenshots
+## 📸 Screenshots
 
 ### Process Table
 ![Process Table](project_Documentation/Screenshots/01_Process_table.png)
@@ -33,22 +39,27 @@ An interactive CPU Scheduling Simulator built using Python and Streamlit to visu
 
 ![Performance Analysis 2](project_Documentation/Screenshots/04_Performance_Analysis2.png)
 
-## Technologies Used
+## 🛠 Technologies Used
+
 - Python
 - Streamlit
 - Pandas
 - Matplotlib
 
-## Installation
+## 💻 Installation
 
 ```bash
 git clone https://github.com/namambhardwaj809-netizen/CPU_Scheduler_Simulator.git
+
 cd CPU_Scheduler_Simulator
+
 pip install -r requirements.txt
+
 streamlit run app.py
 ```
 
-## Author
-Namam Bhardwaj
+## 👩‍💻 Author
+
+**Namam Bhardwaj**
 
 B.Tech – Computer Science and Engineering (Data Science and Machine Learning)
