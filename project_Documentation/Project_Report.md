@@ -1,4 +1,4 @@
-
+﻿
 # INTELLIGENT CPU SCHEDULER SIMULATOR
 
 ## Project Report
@@ -15,8 +15,8 @@
 
 **Algorithms Implemented:**
 1. First Come First Serve (FCFS)
-2. Shortest Job First (SJF) – Non-preemptive
-3. Priority Scheduling – Non-preemptive
+2. Shortest Job First (SJF) ΓÇô Non-preemptive
+3. Priority Scheduling ΓÇô Non-preemptive
 4. Round Robin (RR)
 
 ---
@@ -134,7 +134,7 @@ FCFS is a non-preemptive scheduling algorithm in which processes are executed in
 
 **Key Characteristic:** Simple and fair according to arrival order, but may cause long waiting times.
 
-## 7.2 Shortest Job First (SJF) – Non-preemptive
+## 7.2 Shortest Job First (SJF) ΓÇô Non-preemptive
 
 SJF selects the available process with the shortest burst time.
 
@@ -146,7 +146,7 @@ SJF selects the available process with the shortest burst time.
 
 **Key Characteristic:** Can reduce average waiting time, but longer processes may experience starvation.
 
-## 7.3 Priority Scheduling – Non-preemptive
+## 7.3 Priority Scheduling ΓÇô Non-preemptive
 
 Priority Scheduling selects the available process with the highest priority.
 
@@ -224,7 +224,7 @@ CPU Utilization represents the percentage of elapsed time during which the CPU i
 
 **Formula:**
 
-CPU Utilization = (Total Burst Time / Total Elapsed Time) × 100
+CPU Utilization = (Total Burst Time / Total Elapsed Time) ├ù 100
 
 ## 8.7 Throughput
 
@@ -290,17 +290,17 @@ Matplotlib generates Gantt charts and performance graphs.
 The project is organized as follows:
 
 CPU_Scheduler_Simulator/
-│
-├── venv/
-│
-├── app.py
-│
-├── algorithms.py
-│
-├── requirements.txt
-│
-└── Project_Documentation/
-    └── Project_Report.md
+Γöé
+Γö£ΓöÇΓöÇ venv/
+Γöé
+Γö£ΓöÇΓöÇ app.py
+Γöé
+Γö£ΓöÇΓöÇ algorithms.py
+Γöé
+Γö£ΓöÇΓöÇ requirements.txt
+Γöé
+ΓööΓöÇΓöÇ Project_Documentation/
+    ΓööΓöÇΓöÇ Project_Report.md
 
 
 # 11. Testing and Validation
@@ -367,7 +367,7 @@ The project can be extended with the following features:
 
 # 15. References
 
-1. Operating System Concepts – Abraham Silberschatz, Peter B. Galvin and Greg Gagne.
+1. Operating System Concepts ΓÇô Abraham Silberschatz, Peter B. Galvin and Greg Gagne.
 2. Python Documentation: https://docs.python.org/3/
 3. Streamlit Documentation: https://docs.streamlit.io/
 4. Pandas Documentation: https://pandas.pydata.org/docs/
@@ -389,6 +389,724 @@ The project can be extended with the following features:
 ![Performance Analysis](Screenshots/04_Performance_Analysis.png)
 ![Performance Analysis](Screenshots/04_Performance_Analysis2.png)
 
+# 17. Module-Wise Breakdown
+
+The project is divided into the following modules:
+
+### 17.1 User Interface Module
+The Streamlit interface allows users to enter process details, select scheduling algorithms, view results and download reports.
+
+### 17.2 Scheduling Algorithms Module
+The algorithms.py file implements four CPU scheduling algorithms:
+- First Come First Serve (FCFS)
+- Shortest Job First (SJF), non-preemptive
+- Priority Scheduling, non-preemptive
+- Round Robin (RR)
+
+### 17.3 Performance Calculation Module
+This module calculates completion time, waiting time, turnaround time and response time for each process.
+
+### 17.4 Visualization Module
+Matplotlib is used to generate Gantt charts and performance comparison graphs.
+
+### 17.5 Report Generation Module
+Pandas is used to organize scheduling results and generate downloadable CSV reports.
+
+# 18. Project Functionalities
+
+The simulator provides the following features:
+
+1. **Process Input:** Users can add processes with process ID, arrival time, burst time and priority.
+2. **Algorithm Selection:** Users can compare FCFS, SJF, Priority and Round Robin scheduling.
+3. **Round Robin Configuration:** Users can set the time quantum.
+4. **Gantt Charts:** Displays the execution order and duration of processes.
+5. **Performance Metrics:** Calculates waiting time, turnaround time and response time.
+6. **Algorithm Comparison:** Compares average performance metrics across all four algorithms.
+7. **Performance Visualization:** Displays graphs for easier analysis.
+8. **CSV Export:** Allows users to download scheduling results for further analysis.
+
+# 19. System Flow Diagram
+
+The overall workflow of the simulator is shown below:
+
+```text
+          START
+            |
+            v
+     Enter Process Details
+            |
+            v
+     Validate User Input
+            |
+            v
+    Select Scheduling Algorithms
+            |
+            v
+   Execute FCFS, SJF, Priority
+        and Round Robin
+            |
+            v
+   Calculate Performance Metrics
+            |
+            v
+       Generate Gantt Charts
+            |
+            v
+    Compare Algorithm Results
+            |
+            v
+     Display Graphs and Results
+            |
+            v
+       Download CSV Reports
+            |
+            v
+           END
+
+# Appendix A — AI-Assisted Project Elaboration and Breakdown
+
+## Project Title
+Intelligent CPU Scheduler Simulator
+
+## Project Overview
+The project focuses on understanding and comparing CPU scheduling algorithms through an interactive web-based simulator.
+
+## Main Components
+1. User input and process management.
+2. Implementation of four CPU scheduling algorithms.
+3. Calculation of scheduling performance metrics.
+4. Gantt chart generation.
+5. Algorithm comparison and visualization.
+6. CSV report generation.
+
+## Development Approach
+The project was developed using Python and Streamlit. Scheduling logic was implemented separately from the user interface to improve organization and maintainability.
+
+## Learning Outcomes
+- Understanding CPU scheduling concepts.
+- Implementing scheduling algorithms in Python.
+- Calculating process performance metrics.
+- Visualizing algorithm execution.
+- Using Git and GitHub for version control.
+- Deploying an interactive application.
+
+## Role of AI Assistance
+AI tools were used for project planning, conceptual clarification, debugging guidance and documentation support. The implementation and testing were carried out as part of the individual project work.
+
+# Appendix B — Project Problem Statement
+
+## Intelligent CPU Scheduler Simulator
+
+Design and develop an interactive CPU scheduling simulator that implements and compares the following algorithms:
+
+1. First Come First Serve (FCFS)
+2. Shortest Job First (SJF)
+3. Round Robin (RR)
+4. Priority Scheduling
+
+The simulator should allow users to enter process information, including arrival time, burst time and priority.
+
+It should provide visual representations of process execution using Gantt charts and calculate performance measures such as average waiting time and average turnaround time.
+
+The objective is to help users understand how different CPU scheduling algorithms operate and compare their performance.
+
+## Project Deliverable
+
+A working, interactive application that demonstrates the scheduling algorithms and presents their results through tables, charts and performance comparisons.
 
 **End of Project Report**
+
+
+# Appendix C — Complete Project Source Code
+
+
+## app.py
+
+````python
+
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+
+from algorithms import (
+    fcfs,
+    sjf,
+    priority_scheduling,
+    round_robin
+)
+
+st.set_page_config(
+    page_title="CPU Scheduling Simulator",
+    page_icon="ðŸ’»",
+    layout="wide"
+)
+
+st.title("ðŸ’» CPU Scheduling Simulator")
+st.caption("Compare four CPU scheduling algorithms.")
+
+# Initialize process storage
+if "processes" not in st.session_state:
+    st.session_state.processes = []
+
+# Sidebar
+st.sidebar.header("Process Configuration")
+
+pid = st.sidebar.text_input("Process ID", value="P1")
+arrival = st.sidebar.number_input(
+    "Arrival Time", min_value=0, value=0
+)
+burst = st.sidebar.number_input(
+    "Burst Time", min_value=1, value=1
+)
+priority = st.sidebar.number_input(
+    "Priority", min_value=1, value=1
+)
+
+quantum = st.sidebar.number_input(
+    "Time Quantum",
+    min_value=1,
+    value=2
+)
+
+if st.sidebar.button("Add Process"):
+    pid = pid.strip()
+
+    if not pid:
+        st.sidebar.error("Enter a Process ID.")
+    elif any(p["pid"] == pid for p in st.session_state.processes):
+        st.sidebar.error("Process ID already exists!")
+    else:
+        st.session_state.processes.append({
+            "pid": pid,
+            "arrival": arrival,
+            "burst": burst,
+            "priority": priority
+        })
+        st.sidebar.success(f"{pid} added!")
+
+# Main process table
+st.subheader("ðŸ“‹ Process Table")
+
+if st.session_state.processes:
+    df = pd.DataFrame(st.session_state.processes)
+    st.dataframe(df, use_container_width=True)
+
+    if st.button("Clear All Processes"):
+        st.session_state.processes = []
+        st.rerun()
+else:
+    st.info("Add processes using the sidebar.")
+
+# Run all algorithms
+if st.button("Compare All Algorithms", type="primary"):
+
+    if not st.session_state.processes:
+        st.warning("Please add at least one process.")
+
+    else:
+        processes = st.session_state.processes
+
+        results = {
+            "FCFS": fcfs(processes),
+            "SJF": sjf(processes),
+            "Priority": priority_scheduling(processes)
+        }
+
+        rr_results, rr_gantt = round_robin(
+            processes, quantum
+        )
+
+        results["Round Robin"] = rr_results
+
+        st.session_state.results = results
+        st.session_state.rr_gantt = rr_gantt
+
+# Display comparison
+if "results" in st.session_state:
+
+    st.divider()
+    st.header("ðŸ“Š Algorithm Comparison")
+
+    comparison = []
+
+    for name, result in st.session_state.results.items():
+
+        avg_waiting = sum(
+            p["waiting"] for p in result
+        ) / len(result)
+
+        avg_turnaround = sum(
+            p["turnaround"] for p in result
+        ) / len(result)
+
+        avg_response = sum(
+            p["response"] for p in result
+        ) / len(result)
+
+        total_burst = sum(
+            p["burst"] for p in result
+        )
+
+        first_arrival = min(
+            p["arrival"] for p in result
+        )
+
+        last_completion = max(
+            p["completion"] for p in result
+        )
+
+        elapsed = last_completion - first_arrival
+
+        cpu_utilization = (
+            total_burst / elapsed * 100
+            if elapsed > 0 else 0
+        )
+
+        throughput = (
+            len(result) / elapsed
+            if elapsed > 0 else 0
+        )
+
+        comparison.append({
+            "Algorithm": name,
+            "Avg Waiting Time": round(avg_waiting, 2),
+            "Avg Turnaround Time": round(avg_turnaround, 2),
+            "Avg Response Time": round(avg_response, 2),
+            "CPU Utilization (%)": round(cpu_utilization, 2),
+            "Throughput": round(throughput, 3)
+        })
+
+    comparison_df = pd.DataFrame(comparison)
+
+    st.dataframe(
+        comparison_df,
+        use_container_width=True,
+        hide_index=True
+    )
+
+    st.subheader("ðŸ“¥ Download Reports")
+
+    # Download comparison report
+    comparison_csv = comparison_df.to_csv(
+        index=False
+    ).encode("utf-8")
+
+    st.download_button(
+        label="Download Comparison Report",
+        data=comparison_csv,
+        file_name="CPU_Scheduling_Comparison.csv",
+        mime="text/csv"
+    )
+
+    # Download detailed process results
+    detailed_results = []
+
+    for algorithm, process_list in st.session_state.results.items():
+        for process in process_list:
+            detailed_results.append({
+                "Algorithm": algorithm,
+                **process
+            })
+
+    detailed_df = pd.DataFrame(detailed_results)
+
+    detailed_csv = detailed_df.to_csv(
+        index=False
+    ).encode("utf-8")
+
+    st.download_button(
+        label="Download Detailed Results",
+        data=detailed_csv,
+        file_name="CPU_Scheduling_Detailed_Results.csv",
+        mime="text/csv"
+    )
+
+
+    st.subheader("ðŸ“ˆ Gantt Charts")
+
+    gantt_data = {}
+
+    for name, result in st.session_state.results.items():
+
+        if name == "Round Robin":
+            gantt_data[name] = st.session_state.rr_gantt
+        else:
+            gantt_data[name] = [
+                {
+                    "pid": p["pid"],
+                    "start": p["start"],
+                    "end": p["completion"]
+                }
+                for p in result
+            ]
+
+
+    for name, schedule in gantt_data.items():
+
+        st.write(f"**{name}**")
+
+        fig, ax = plt.subplots(figsize=(10, 1.8))
+
+        current_time = 0
+
+        for item in schedule:
+
+            start = item["start"]
+            end = item["end"]
+
+            # Show CPU idle time
+            if start > current_time:
+                idle_time = start - current_time
+
+                ax.barh(
+                    0,
+                    idle_time,
+                    left=current_time,
+                    height=0.5,
+                    color="lightgray",
+                    edgecolor="black"
+                )
+
+                ax.text(
+                    current_time + idle_time / 2,
+                    0,
+                    "IDLE",
+                    ha="center",
+                    va="center"
+                )
+
+            # Show process execution
+            ax.barh(
+                0,
+                end - start,
+                left=start,
+                height=0.5,
+                edgecolor="black"
+            )
+
+            ax.text(
+                (start + end) / 2,
+                0,
+                item["pid"],
+                ha="center",
+                va="center"
+            )
+
+            current_time = end
+
+        ax.set_xlabel("CPU Time")
+        ax.set_yticks([])
+        ax.set_xlim(left=0)
+        ax.set_title(f"{name} Scheduling")
+
+        plt.tight_layout()
+        st.pyplot(fig)
+        plt.close(fig)
+
+
+
+
+    st.divider()
+    st.header("ðŸ† Performance Analysis")
+
+    st.write("### Best Algorithm by Metric")
+
+    metrics = [
+        "Avg Waiting Time",
+        "Avg Turnaround Time",
+        "Avg Response Time"
+    ]
+
+    for metric in metrics:
+        best_index = comparison_df[metric].idxmin()
+        best_algorithm = comparison_df.loc[
+            best_index, "Algorithm"
+        ]
+        best_value = comparison_df.loc[
+            best_index, metric
+        ]
+
+        st.success(
+            f"{metric}: {best_algorithm} "
+            f"({best_value})"
+        )
+
+
+    st.write("### Average Waiting Time Comparison")
+
+    fig, ax = plt.subplots(figsize=(9, 4))
+
+    algorithms = comparison_df["Algorithm"].tolist()
+    waiting_times = comparison_df["Avg Waiting Time"].tolist()
+
+    bars = ax.bar(
+        algorithms,
+        waiting_times
+    )
+
+    ax.set_ylabel("Average Waiting Time")
+    ax.set_xlabel("Scheduling Algorithm")
+    ax.set_title("Average Waiting Time Comparison")
+
+    ax.bar_label(bars, fmt="%.2f", padding=4)
+
+    ax.set_ylim(
+        0,
+        max(waiting_times) * 1.2 + 0.5
+    )
+
+    plt.xticks(rotation=15)
+    plt.tight_layout()
+
+    st.pyplot(fig)
+    plt.close(fig)
+
+````
+
+## algorithms.py
+
+````python
+
+def fcfs(processes):
+    processes = sorted(processes, key=lambda p: p["arrival"])
+
+    current_time = 0
+    results = []
+
+    for process in processes:
+        pid = process["pid"]
+        arrival = process["arrival"]
+        burst = process["burst"]
+
+        start_time = max(current_time, arrival)
+        completion_time = start_time + burst
+
+        turnaround_time = completion_time - arrival
+        waiting_time = turnaround_time - burst
+        response_time = start_time - arrival
+
+        results.append({
+            "pid": pid,
+            "arrival": arrival,
+            "burst": burst,
+            "start": start_time,
+            "completion": completion_time,
+            "waiting": waiting_time,
+            "turnaround": turnaround_time,
+            "response": response_time
+        })
+
+        current_time = completion_time
+
+    return results
+
+def sjf(processes):
+    processes = sorted(processes, key=lambda p: p["arrival"])
+
+    current_time = 0
+    remaining = processes.copy()
+    results = []
+
+    while remaining:
+        available = [
+            p for p in remaining
+            if p["arrival"] <= current_time
+        ]
+
+        if not available:
+            current_time = remaining[0]["arrival"]
+            continue
+
+        process = min(available, key=lambda p: p["burst"])
+
+        pid = process["pid"]
+        arrival = process["arrival"]
+        burst = process["burst"]
+
+        start_time = current_time
+        completion_time = start_time + burst
+
+        turnaround_time = completion_time - arrival
+        waiting_time = turnaround_time - burst
+        response_time = start_time - arrival
+
+        results.append({
+            "pid": pid,
+            "arrival": arrival,
+            "burst": burst,
+            "start": start_time,
+            "completion": completion_time,
+            "waiting": waiting_time,
+            "turnaround": turnaround_time,
+            "response": response_time
+        })
+
+        current_time = completion_time
+        remaining.remove(process)
+
+    return results
+
+def priority_scheduling(processes):
+    processes = sorted(processes, key=lambda p: p["arrival"])
+
+    current_time = 0
+    remaining = processes.copy()
+    results = []
+
+    while remaining:
+        available = [
+            p for p in remaining
+            if p["arrival"] <= current_time
+        ]
+
+        if not available:
+            current_time = remaining[0]["arrival"]
+            continue
+
+        process = min(
+            available,
+            key=lambda p: (p["priority"], p["arrival"])
+        )
+
+        pid = process["pid"]
+        arrival = process["arrival"]
+        burst = process["burst"]
+
+        start_time = current_time
+        completion_time = start_time + burst
+
+        turnaround_time = completion_time - arrival
+        waiting_time = turnaround_time - burst
+        response_time = start_time - arrival
+
+        results.append({
+            "pid": pid,
+            "arrival": arrival,
+            "burst": burst,
+            "priority": process["priority"],
+            "start": start_time,
+            "completion": completion_time,
+            "waiting": waiting_time,
+            "turnaround": turnaround_time,
+            "response": response_time
+        })
+
+        current_time = completion_time
+        remaining.remove(process)
+
+    return results
+
+
+from collections import deque
+
+
+def round_robin(processes, quantum):
+    processes = sorted(processes, key=lambda p: p["arrival"])
+
+    remaining = {
+        p["pid"]: p["burst"] for p in processes
+    }
+
+    first_start = {}
+    completion = {}
+    gantt = []
+
+    ready_queue = deque()
+    current_time = 0
+    index = 0
+
+    while index < len(processes) or ready_queue:
+
+        if not ready_queue and index < len(processes):
+            current_time = max(
+                current_time, processes[index]["arrival"]
+            )
+
+        while (index < len(processes)
+               and processes[index]["arrival"] <= current_time):
+            ready_queue.append(processes[index])
+            index += 1
+
+        if not ready_queue:
+            continue
+
+        process = ready_queue.popleft()
+        pid = process["pid"]
+
+        if pid not in first_start:
+            first_start[pid] = current_time
+
+        start = current_time
+        execution = min(quantum, remaining[pid])
+
+        current_time += execution
+        remaining[pid] -= execution
+
+        gantt.append({
+            "pid": pid,
+            "start": start,
+            "end": current_time
+        })
+
+        while (index < len(processes)
+               and processes[index]["arrival"] <= current_time):
+            ready_queue.append(processes[index])
+            index += 1
+
+        if remaining[pid] > 0:
+            ready_queue.append(process)
+        else:
+            completion[pid] = current_time
+
+    results = []
+
+    for p in processes:
+        pid = p["pid"]
+        turnaround = completion[pid] - p["arrival"]
+
+        results.append({
+            "pid": pid,
+            "arrival": p["arrival"],
+            "burst": p["burst"],
+            "start": first_start[pid],
+            "completion": completion[pid],
+            "waiting": turnaround - p["burst"],
+            "turnaround": turnaround,
+            "response": first_start[pid] - p["arrival"]
+        })
+
+    return results, gantt
+
+
+
+
+if __name__ == "__main__":
+    processes = [
+        {"pid": "P1", "arrival": 0, "burst": 5},
+        {"pid": "P2", "arrival": 1, "burst": 3},
+        {"pid": "P3", "arrival": 2, "burst": 2},
+    ]
+
+    result, gantt = round_robin(processes, quantum=2)
+
+    print("Round Robin Results:")
+
+    for process in result:
+        print(process)
+
+    print("\nGantt Chart:")
+    for item in gantt:
+        print(item)
+
+
+````
+
+## requirements.txt
+
+````text
+streamlit
+pandas
+matplotlib
+
+````
 
