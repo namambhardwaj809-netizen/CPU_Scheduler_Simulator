@@ -391,26 +391,39 @@ The project can be extended with the following features:
 
 # 18. Module-Wise Breakdown
 
-The project is divided into the following modules:
+The project is organized into three major modules, each responsible for a specific part of the CPU scheduling simulation.
 
-### 18.1 User Interface Module
-The Streamlit interface allows users to enter process details, select scheduling algorithms, view results and download reports.
+### 18.1 Module 1: User Interface and Process Input
 
-### 18.2 Scheduling Algorithms Module
-The algorithms.py file implements four CPU scheduling algorithms:
+The Streamlit interface allows users to interact with the simulator.
+
+Key responsibilities:
+- Accept process IDs, arrival times, burst times and priorities.
+- Allow users to select scheduling algorithms.
+- Provide an option to configure the Round Robin time quantum.
+- Display process information and scheduling results.
+
+### 18.2 Module 2: Scheduling Algorithms and Performance Calculation
+
+This module handles CPU scheduling logic and calculates performance metrics.
+
+The `algorithms.py` file implements four scheduling algorithms:
 - First Come First Serve (FCFS)
 - Shortest Job First (SJF), non-preemptive
 - Priority Scheduling, non-preemptive
 - Round Robin (RR)
 
-### 18.3 Performance Calculation Module
-This module calculates completion time, waiting time, turnaround time and response time for each process.
+It also calculates completion time, waiting time, turnaround time and response time for each process.
 
-### 18.4 Visualization Module
-Matplotlib is used to generate Gantt charts and performance comparison graphs.
+### 18.3 Module 3: Visualization and Report Generation
 
-### 18.5 Report Generation Module
-Pandas is used to organize scheduling results and generate downloadable CSV reports.
+This module presents scheduling results in an understandable format and supports result export.
+
+Key responsibilities:
+- Generate Gantt charts using Matplotlib.
+- Display performance comparison graphs.
+- Organize scheduling results using Pandas.
+- Provide downloadable CSV reports.
 
 # 19. Project Functionalities
 
@@ -1129,4 +1142,88 @@ pandas
 matplotlib
 
 ````
+## tests/test_algorithms.py
 
+````python
+import unittest
+from algorithms import fcfs, sjf, priority_scheduling, round_robin
+
+
+class TestSchedulingAlgorithms(unittest.TestCase):
+
+    def setUp(self):
+        self.processes = [
+            {"pid": "P1", "arrival": 3, "burst": 4, "priority": 2},
+            {"pid": "P2", "arrival": 0, "burst": 2, "priority": 1},
+            {"pid": "P3", "arrival": 1, "burst": 3, "priority": 3}
+        ]
+
+    def check_results(self, results, expected):
+        actual = {p["pid"]: p for p in results}
+
+        for pid, values in expected.items():
+            for field, value in values.items():
+                self.assertEqual(actual[pid][field], value)
+
+    def test_fcfs(self):
+        results = fcfs(self.processes)
+        self.check_results(results, {
+            "P1": {"start": 5, "completion": 9, "waiting": 2},
+            "P2": {"start": 0, "completion": 2, "waiting": 0},
+            "P3": {"start": 2, "completion": 5, "waiting": 1}
+        })
+
+    def test_sjf(self):
+        results = sjf(self.processes)
+        self.check_results(results, {
+            "P1": {"start": 5, "completion": 9},
+            "P2": {"start": 0, "completion": 2},
+            "P3": {"start": 2, "completion": 5}
+        })
+
+    def test_priority(self):
+        results = priority_scheduling(self.processes)
+        self.check_results(results, {
+            "P1": {"start": 5, "completion": 9},
+            "P2": {"start": 0, "completion": 2},
+            "P3": {"start": 2, "completion": 5}
+        })
+
+    def test_round_robin(self):
+        results, gantt = round_robin(self.processes, 2)
+        self.check_results(results, {
+            "P1": {"completion": 9, "waiting": 2, "turnaround": 6},
+            "P2": {"completion": 2, "waiting": 0, "turnaround": 2},
+            "P3": {"completion": 7, "waiting": 3, "turnaround": 6}
+        })
+
+    def test_process_arriving_after_cpu_idle_time(self):
+        process = [
+            {"pid": "P1", "arrival": 5, "burst": 2, "priority": 1}
+        ]
+
+        for algorithm in (fcfs, sjf, priority_scheduling):
+            with self.subTest(algorithm=algorithm.__name__):
+                result = algorithm(process)[0]
+                self.assertEqual(result["start"], 5)
+                self.assertEqual(result["completion"], 7)
+                self.assertEqual(result["waiting"], 0)
+                self.assertEqual(result["turnaround"], 2)
+                self.assertEqual(result["response"], 0)
+
+
+if __name__ == "__main__":
+    unittest.main()
+````
+
+```
+
+So the ending should look like:
+
+```markdown
+## requirements.txt
+
+````text
+streamlit
+pandas
+matplotlib
