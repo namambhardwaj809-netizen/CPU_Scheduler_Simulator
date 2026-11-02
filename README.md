@@ -63,3 +63,14 @@ streamlit run app.py
 **Namam Bhardwaj**
 
 B.Tech – Computer Science and Engineering (Data Science and Machine Learning)
+
+## Automated Testing
+
+Run the automated tests using:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+The test suite covers FCFS, SJF, Priority Scheduling, and Round Robin.
+
