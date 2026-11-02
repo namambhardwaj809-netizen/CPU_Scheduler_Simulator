@@ -49,6 +49,19 @@ class TestSchedulingAlgorithms(unittest.TestCase):
             "P2": {"completion": 2, "waiting": 0, "turnaround": 2},
             "P3": {"completion": 7, "waiting": 3, "turnaround": 6}
         })
+    def test_process_arriving_after_cpu_idle_time(self):
+        process = [
+            {"pid": "P1", "arrival": 5, "burst": 2, "priority": 1}
+        ]
+
+        for algorithm in (fcfs, sjf, priority_scheduling):
+            with self.subTest(algorithm=algorithm.__name__):
+                result = algorithm(process)[0]
+                self.assertEqual(result["start"], 5)
+                self.assertEqual(result["completion"], 7)
+                self.assertEqual(result["waiting"], 0)
+                self.assertEqual(result["turnaround"], 2)
+                self.assertEqual(result["response"], 0)
 
 
 if __name__ == "__main__":
