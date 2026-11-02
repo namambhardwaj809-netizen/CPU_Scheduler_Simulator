@@ -303,11 +303,11 @@ CPU_Scheduler_Simulator/
     ΓööΓöÇΓöÇ Project_Report.md
 
 
-# 11. Testing and Validation
+# 12. Testing and Validation
 
 The simulator is tested using different process configurations to verify the scheduling algorithms and performance calculations.
 
-## 11.1 Functional Test Cases
+## 12.1 Functional Test Cases
 
 | Test ID | Test Scenario | Expected Result |
 |---|---|---|
@@ -322,7 +322,7 @@ The simulator is tested using different process configurations to verify the sch
 | TC09 | Compare algorithms | Performance comparison is displayed |
 | TC10 | Download CSV reports | CSV files are generated successfully |
 
-## 11.2 Validation
+## 12.2 Validation
 
 The project was tested with multiple process configurations, including:
 
@@ -334,7 +334,7 @@ The project was tested with multiple process configurations, including:
 
 The test cases help verify the scheduling logic, visualizations and report generation features.
 
-# 12. Limitations
+# 13. Limitations
 
 The current version of the simulator has the following limitations:
 
@@ -344,7 +344,7 @@ The current version of the simulator has the following limitations:
 4. Results depend on the process information entered by the user.
 
 
-# 13. Conclusion
+# 14. Conclusion
 
 The Intelligent CPU Scheduler Simulator provides an interactive platform for understanding and comparing different CPU scheduling algorithms.
 
@@ -354,7 +354,7 @@ Through Gantt charts, performance metrics, comparison tables and downloadable re
 
 This project also provides practical experience in Python programming, algorithm implementation, data processing and visualization.
 
-# 14. Future Enhancements
+# 15. Future Enhancements
 
 The project can be extended with the following features:
 
@@ -365,7 +365,7 @@ The project can be extended with the following features:
 5. Additional performance metrics.
 6. Exporting reports in PDF format.
 
-# 15. References
+# 16. References
 
 1. Operating System Concepts ΓÇô Abraham Silberschatz, Peter B. Galvin and Greg Gagne.
 2. Python Documentation: https://docs.python.org/3/
@@ -373,46 +373,46 @@ The project can be extended with the following features:
 4. Pandas Documentation: https://pandas.pydata.org/docs/
 5. Matplotlib Documentation: https://matplotlib.org/stable/
 
-## 16. Project Screenshots
+## 17. Project Screenshots
 
-### 16.1 Process Table
+### 17.1 Process Table
 ![Process Table](Screenshots/01_Process_table.png)
 
-### 16.2 Algorithm Comparison
+### 17.2 Algorithm Comparison
 ![Algorithm Comparison](Screenshots/02_Algorithm_Comparison.png)
 
-### 16.3 Gantt Charts
+### 17.3 Gantt Charts
 ![Gantt Charts](Screenshots/03_Gantt_Charts.png)
 ![Gantt Charts](Screenshots/03_Gantt_Charts2.png)
 
-### 16.4 Performance Analysis
+### 17.4 Performance Analysis
 ![Performance Analysis](Screenshots/04_Performance_Analysis.png)
 ![Performance Analysis](Screenshots/04_Performance_Analysis2.png)
 
-# 17. Module-Wise Breakdown
+# 18. Module-Wise Breakdown
 
 The project is divided into the following modules:
 
-### 17.1 User Interface Module
+### 18.1 User Interface Module
 The Streamlit interface allows users to enter process details, select scheduling algorithms, view results and download reports.
 
-### 17.2 Scheduling Algorithms Module
+### 18.2 Scheduling Algorithms Module
 The algorithms.py file implements four CPU scheduling algorithms:
 - First Come First Serve (FCFS)
 - Shortest Job First (SJF), non-preemptive
 - Priority Scheduling, non-preemptive
 - Round Robin (RR)
 
-### 17.3 Performance Calculation Module
+### 18.3 Performance Calculation Module
 This module calculates completion time, waiting time, turnaround time and response time for each process.
 
-### 17.4 Visualization Module
+### 18.4 Visualization Module
 Matplotlib is used to generate Gantt charts and performance comparison graphs.
 
-### 17.5 Report Generation Module
+### 18.5 Report Generation Module
 Pandas is used to organize scheduling results and generate downloadable CSV reports.
 
-# 18. Project Functionalities
+# 19. Project Functionalities
 
 The simulator provides the following features:
 
@@ -425,7 +425,7 @@ The simulator provides the following features:
 7. **Performance Visualization:** Displays graphs for easier analysis.
 8. **CSV Export:** Allows users to download scheduling results for further analysis.
 
-# 19. System Flow Diagram
+# 20. System Flow Diagram
 
 The overall workflow of the simulator is shown below:
 
@@ -462,6 +462,26 @@ The overall workflow of the simulator is shown below:
             |
             v
            END
+
+# 21. GitHub Revision Tracking
+
+**GitHub Repository:** [CPU Scheduler Simulator](https://github.com/namambhardwaj809-netizen/CPU_Scheduler_Simulator)
+
+Git and GitHub were used for version control and project development. Changes were committed with meaningful messages and pushed to the remote repository. A separate feature branch, `feature/algorithm-tests`, was created for implementing automated tests and was subsequently merged into the main branch.
+
+The following table shows the seven project revisions:
+
+| Revision | Commit ID | Description |
+|---|---|---|
+| 1 | `c9041db` | Initial commit - CPU Scheduler Simulator |
+| 2 | `3e7a969` | Add project README with screenshots |
+| 3 | `d9c1d17` | Add live demo and embed project screenshots |
+| 4 | `2e3be2a` | Complete project report with diagrams and source code |
+| 5 | `4869c4c` | Add automated tests for scheduling algorithms |
+| 6 | `dff417a` | Document automated testing instructions |
+| 7 | `e1b9b37` | Test idle CPU time before process arrival |
+
+**Live Application:** [CPU Scheduler Simulator](https://namam-scheduling-visualizer.streamlit.app/)
 
 # Appendix A — AI-Assisted Project Elaboration and Breakdown
 
